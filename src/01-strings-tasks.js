@@ -300,6 +300,7 @@ function getCardId(value) {
   return (+num) + (i * 13) - 1;
 }
 
+
 module.exports = {
   concatenateStrings,
   getStringLength,
