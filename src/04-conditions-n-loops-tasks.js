@@ -465,7 +465,7 @@ function getMatrixProduct(m1, m2) {
  * Function should return who is winner in the current position according to the game rules.
  * The result can be: 'X','0',undefined
  *
- * @param {array} position
+ * @param {array} p
  * @return {string}
  *
  * @example
@@ -487,8 +487,32 @@ function getMatrixProduct(m1, m2) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(/* position */) {
-  throw new Error('Not implemented');
+function evaluateTicTacToePosition(p) {
+  if (p[0][0] === p[0][1] && p[0][1] === p[0][2] && p[0][0] !== undefined) {
+    return p[0][0];
+  }
+  if (p[1][0] === p[1][1] && p[1][1] === p[1][2] && p[1][0] !== undefined) {
+    return p[1][0];
+  }
+  if (p[2][0] === p[2][1] && p[2][1] === p[2][2] && p[2][0] !== undefined) {
+    return p[2][0];
+  }
+  if (p[0][0] === p[1][0] && p[1][0] === p[2][0] && p[0][0] !== undefined) {
+    return p[0][0];
+  }
+  if (p[0][1] === p[1][1] && p[1][1] === p[2][1] && p[0][1] !== undefined) {
+    return p[0][1];
+  }
+  if (p[0][2] === p[1][2] && p[1][2] === p[2][2] && p[0][2] !== undefined) {
+    return p[0][2];
+  }
+  if (p[0][0] === p[1][1] && p[1][1] === p[2][2] && p[0][0] !== undefined) {
+    return p[0][0];
+  }
+  if (p[0][2] === p[1][1] && p[1][1] === p[2][0] && p[0][2] !== undefined) {
+    return p[0][2];
+  }
+  return undefined;
 }
 
 
